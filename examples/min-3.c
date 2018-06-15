@@ -1,4 +1,4 @@
-include <stdio.h>
+#include <stdio.h>
 
 int main() {
     ___REGION_START__RT_HIGH "0"
