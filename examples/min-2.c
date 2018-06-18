@@ -4,7 +4,7 @@
 int main() {
     ___REGION_START __RT_High "R1"
     int a = 42;
-    puts(itoa(a));
+    printf("%d", a);
     ___REGION_END __RT_High "R1"
     return 0;
 }
