@@ -1,5 +1,6 @@
 #include <iostream>
 #include <unistd.h>
+
 using namespace std;
 
 /*
@@ -88,25 +89,25 @@ void order_drink() {
 
 int main() {
 
-	___REGION_START __RT_High "0"
+  ___REGION_START __RT_High "0"
 
-	___REGION_START __RT_High "1"
+  ___REGION_START __RT_High "1"
   choose_food(PIZZA);
-	___REGION_END __RT_High "1"
+  ___REGION_END __RT_High "1"
 
-	___REGION_START __RT_High "2"
+  ___REGION_START __RT_High "2"
   choose_drink(BEER);
-	___REGION_END __RT_High "2"
+  ___REGION_END __RT_High "2"
 
-	___REGION_START __RT_High "3"
+  ___REGION_START __RT_High "3"
   order_food();
-	___REGION_END __RT_High "3"
+  ___REGION_END __RT_High "3"
 
-	___REGION_START __RT_High "4"
+  ___REGION_START __RT_High "4"
   order_drink();
-	___REGION_END __RT_High "4"
+  ___REGION_END __RT_High "4"
 
-	___REGION_END __RT_High "0"
+  ___REGION_END __RT_High "0"
 
   return 0;
 }
