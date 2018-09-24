@@ -1,48 +1,38 @@
-#include "switch.h"
+#include "options.h"
 #include <iostream>
 #include <time.h>
 
-int condition = CONDITION;
+int condition = 1;
 long int sleeping_time_seconds = TIME_DURATION_SECONDS;
 long int sleeping_time_nanoseconds = TIME_DURATION_NANOSECONDS;
 
-void nsleep_second() {
-  timespec t;
-  t.tv_sec = sleeping_time_seconds;
-  t.tv_nsec = 0;
-  nanosleep(&t, nullptr);
-}
-
-void nsleep_nano() {
-  timespec t;
-  t.tv_sec = 0;
-  t.tv_nsec = sleeping_time_nanoseconds; // Range [0, 999999999]
-  nanosleep(&t, nullptr);
-}
-
 int main() {
+
+  ___REGION_START __RT_High "0"
 
   switch (condition) {
 
+    ___REGION_START __RT_High "1"
   case 1:
-    nsleep_second();
-    nsleep_nano();
+    nsleep();
     break;
+    ___REGION_END __RT_High "1"
 
+    ___REGION_START __RT_High "2"
   case 2:
-    nsleep_second();
-    nsleep_nano();
+    nsleep();
     break;
+    ___REGION_END __RT_High "2"
 
-  case 3:
-    nsleep_second();
-    nsleep_nano();
-    break;
-
+    ___REGION_START __RT_High "3"
   default:
-    nsleep_second();
-    nsleep_nano();
+    sleeping_time_seconds = 2;
+    sleeping_time_nanoseconds = 0;
+    nsleep();
   }
+  ___REGION_END __RT_High "3"
+
+  ___REGION_END __RT_High "0"
 
   return 0;
 }
