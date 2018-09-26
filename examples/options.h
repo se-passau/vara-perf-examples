@@ -1,3 +1,6 @@
+#include <iostream>
+#include <time.h>
+
 // Preselection for loops
 #ifdef ONE
 #define LOOP_ITERATIONS 1
@@ -39,3 +42,14 @@
 #ifndef TIME_DURATION_NANOSECONDS
 #define TIME_DURATION_NANOSECONDS 0
 #endif
+
+extern long int loop_number;
+extern long int sleeping_time_seconds;
+extern long int sleeping_time_nanoseconds;
+
+void nsleep() {
+  timespec t;
+  t.tv_sec = sleeping_time_seconds;
+  t.tv_nsec = sleeping_time_nanoseconds;
+  nanosleep(&t, nullptr);
+}
