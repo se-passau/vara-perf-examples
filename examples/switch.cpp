@@ -1,6 +1,4 @@
 #include "options.h"
-#include <iostream>
-#include <time.h>
 
 int condition = 1;
 long int sleeping_time_seconds = TIME_DURATION_SECONDS;
