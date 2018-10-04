@@ -12,8 +12,6 @@ int main() {
     nsleep();
   }
 
-  asm("nop"); // TODO (se-passau/VaRA#296): Workaround for false region detection
-
   ___REGION_END __RT_High "0"
 
   return 0;
