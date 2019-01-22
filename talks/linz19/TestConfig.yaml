@@ -1,0 +1,8 @@
+---
+- FeatureName:            FeatureCalc
+  FeatureCodeLoc:         'feature.cpp:10:5'
+- FeatureName:            FeatureCalc
+  FeatureCodeLoc:         'feature_fast.cpp:10:5'
+- FeatureName:            FeatureCalcFast
+  FeatureCodeLoc:         'feature_fast.cpp:11:5'
+...
