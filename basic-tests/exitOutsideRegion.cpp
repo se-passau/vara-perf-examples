@@ -8,7 +8,6 @@ int main() {
     ___REGION_START __RT_High "one"
     while(1){
         fibSum = firstSummand + secondSummand;
-        std::cout << fibSum << std::endl;
         firstSummand = secondSummand;
         secondSummand = fibSum;
         if(fibSum == 377){
@@ -17,4 +16,6 @@ int main() {
     }
     ___REGION_END __RT_High "one"
     std::exit(42);
+
+    return 0;
 }
