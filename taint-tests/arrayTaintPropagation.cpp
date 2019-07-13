@@ -1,3 +1,5 @@
+#include <stdlib.h>
+
 int main() {
 
   ___REGION_START __RT_Commit "Initialize"
@@ -12,3 +14,4 @@ int main() {
 
   return 0;
 }
+
