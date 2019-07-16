@@ -1,3 +1,5 @@
+#include <stdlib.h>
+
 struct s1 {
   int a;
   char *t;

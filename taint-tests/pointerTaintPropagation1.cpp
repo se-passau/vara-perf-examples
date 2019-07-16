@@ -1,3 +1,5 @@
+#include <stdlib.h>
+
 int main() {
   ___REGION_START __RT_Commit "getenv"
   char *t1 = getenv("gude");

@@ -1,3 +1,5 @@
+#include <stdlib.h>
+
 union u1 {
   char *strings[2][2];
   int a;

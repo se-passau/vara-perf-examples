@@ -1,3 +1,10 @@
+#include <stdlib.h>
+
+char** retNonTaintedString () {
+  char* a = "gude";
+  return &a;
+}
+
 int main() {
   ___REGION_START __RT_Commit "getenv"
   char *t1 = getenv("gude");
@@ -6,7 +13,7 @@ int main() {
   char ***t3 = &t2;
 
   char **t4 = *t3;
-  *t3 = ret_of_the_untainted();
+  *t3 = retNonTaintedString();
 
   return 0;
 }

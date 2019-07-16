@@ -1,4 +1,5 @@
 #include <stdarg.h>
+#include <stdlib.h>
 
 void foo(int n, ...) {
   va_list ap;

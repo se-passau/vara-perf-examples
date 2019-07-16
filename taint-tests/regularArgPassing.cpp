@@ -1,3 +1,5 @@
+#include <stdlib.h>
+
 struct s2 {
   char *t;
   char *ut;
