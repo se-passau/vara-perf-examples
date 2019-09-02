@@ -1,0 +1,1 @@
+// CHECK: store i8* %call, i8** %t, {{.*}} {getenv }

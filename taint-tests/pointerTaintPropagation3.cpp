@@ -11,8 +11,8 @@ int main() {
   ___REGION_END __RT_Commit "getenv"
   char **t2 = &t1;
   char ***t3 = &t2;
-
   char **t4 = *t3;
+
   *t3 = retNonTaintedString();
 
   return 0;

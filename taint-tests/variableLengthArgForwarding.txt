@@ -1,0 +1,2 @@
+// CHECK: load i8*, i8** %t, {{.*}} {getenv
+// CHECK: store i8* %[[NUM:[0-9]]], i8** %t, {{.*}} {getenv

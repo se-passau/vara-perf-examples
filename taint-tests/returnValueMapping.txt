@@ -1,0 +1,7 @@
+// CHECK:      store i32 %conv, i32* %rc, {{.*}} {getenv
+// CHECK:      %tobool = icmp ne i32 {{.*}} {getenv
+// CHECK:      br i1 %tobool, label %if.then, {{.*}} {getenv
+// CHECK-NEXT: store i32 %[[NUM:[0-9]]], i32* %retval, {{.*}} {getenv
+// CHECK-NOT:  br label %return {{.*}} {getenv
+// CHECK:      store i32 %add, i32* %retval, {{.*}} {getenv
+// CHECK:      ret i32 {{.*}} {getenv

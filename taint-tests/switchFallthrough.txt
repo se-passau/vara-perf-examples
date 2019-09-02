@@ -1,0 +1,4 @@
+// CHECK:      load i8*, i8** %t, {{.*}} {getenv
+// CHECK-NEXT: ptrtoint i8* {{.*}} {getenv
+// CHECK-NEXT: %conv = trunc i64 {{.*}} {getenv
+// CHECK:      ] T: {getenv
