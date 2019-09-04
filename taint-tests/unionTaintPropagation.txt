@@ -1,3 +1,3 @@
-// CHECK:     store i8* %[[NUM1:[0-9]]], i8** %t1, {{.*}} {getenv
-// CHECK-NOT: store i8* %[[NUM2:[0-9]]], i8** %t2, {{.*}} {getenv
-// CHECK-NOT: store i32 %[[NUM3:[0-9]]], i32* %a, {{.*}} {getenv
+// CHECK:     store i8* %{{0-9}}, i8** %t1, {{.*}} {getenv
+// CHECK-NOT: store i8* %{{0-9}}, i8** %t2, {{.*}} {getenv
+// CHECK-NOT: store i32 %{{0-9}}, i32* %a, {{.*}} {getenv

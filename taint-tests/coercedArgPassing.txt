@@ -1,5 +1,5 @@
 // CHECK-NOT: bitcast %struct.s1* {{.*}} {getenv
-// CHECK-NOT: %[[NUM1:[0-9]]] = getelementptr inbounds {{.*}} {getenv
-// CHECK-NOT: %[[NUM2:[0-9]]] = load {{.*}} {getenv
-// CHECK: %[[NUM3:[0-9]]] = load i8*, i8** %t, {{.*}} {getenv
-// CHECK-NEXT: store i8* %[NUM3], i8** %t1, {{.*}} {getenv
+// CHECK-NOT: %{{0-9}} = getelementptr inbounds {{.*}} {getenv
+// CHECK-NOT: %{{NUM2:[0-9}} = load {{.*}} {getenv
+// CHECK: %[[NUM:[0-9]]] = load i8*, i8** %t, {{.*}} {getenv
+// CHECK-NEXT: store i8* %[NUM], i8** %t1, {{.*}} {getenv
