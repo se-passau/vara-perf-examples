@@ -1,2 +1,3 @@
-// CHECK: store i8* %{{0-9}}, i8** %t, {{.*}} {getenv
+// CHECK: store i8* %{{[0-9]}}, i8** %t, {{.*}} {getenv
 // CHECK: store i8* %5, i8** %t, {{.*}} {getenv
+
