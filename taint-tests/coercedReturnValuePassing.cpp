@@ -8,8 +8,9 @@ struct s1 {
 
 struct s1 foo() {
   struct s1 s1;
+  s1.t = 
   ___REGION_START __RT_Commit "getenv"
-  s1.t = getenv("gude");
+  getenv("gude");
   ___REGION_END __RT_Commit "getenv"
 
   return s1;

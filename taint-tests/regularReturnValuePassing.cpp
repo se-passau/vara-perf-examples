@@ -1,8 +1,9 @@
 #include <stdlib.h>
 
 char *foo() {
+  char *t = 
   ___REGION_START __RT_Commit "getenv"
-  char *t = getenv("gude");
+  getenv("gude");
   ___REGION_END __RT_Commit "getenv"
 
   return t;

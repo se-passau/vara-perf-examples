@@ -3,8 +3,9 @@
 int main() {
 
   char *strings[1024];
+  strings[42] =
   ___REGION_START __RT_Commit "getenv"
-  strings[42] = getenv("gude");
+   getenv("gude");
   ___REGION_END __RT_Commit "getenv"
 
   char **strings_ptr = strings;

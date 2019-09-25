@@ -7,8 +7,9 @@ union u1 {
 
 int main() {
   union u1 u;
+  u.strings[0][1] = 
   ___REGION_START __RT_Commit "getenv"
-  u.strings[0][1] = getenv("gude");
+  getenv("gude");
   ___REGION_END __RT_Commit "getenv"
 
 

@@ -1,8 +1,9 @@
 #include <stdlib.h>
 
 int main() {
+  char *t = 
   ___REGION_START __RT_Commit "getenv"
-  char *t = getenv("gude");
+  getenv("gude");
   ___REGION_END __RT_Commit "getenv"
 
   switch ((int)(size_t)t) {

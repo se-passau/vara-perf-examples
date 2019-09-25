@@ -12,9 +12,9 @@ struct s1 {
 
 int main() {
   struct s2 *s2P = new struct s2;
-
+  s2P->t = 
   ___REGION_START __RT_Commit "getenv"
-  s2P->t = getenv("gude");
+  getenv("gude");
   ___REGION_END __RT_Commit "getenv"
 
   struct s1 s1P = {"test", *s2P};
