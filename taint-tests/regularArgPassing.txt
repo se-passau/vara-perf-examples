@@ -1,5 +1,5 @@
-// CHECK:     %s2 = getelementptr inbounds %struct.s1, {{.*}} {getenv
-// CHECK-NOT: %s21 = getelementptr inbounds %struct.s1, {{.*}} {getenv
-// CHECK-NOT: call void {{.*}} {getenv
-// CHECK:     store i8* %{{[0-9]}}, i8** %t1, {{.*}} {getenv
+// CHECK-DAG: %s2 = getelementptr inbounds %struct.s1, {{.*}}
+// CHECK-DAG: store i8* %{{[0-9]}}, i8** %t1, {{.*}}
+// CHECK-NOT: %s21 = getelementptr inbounds %struct.s1, {{.*}}
+// CHECK-NOT: call void {{.*}}
 

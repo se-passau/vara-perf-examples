@@ -1,4 +1,4 @@
-// CHECK:      %cmp = {{.*}} {getenv
-// CHECK:      br i1 %cmp, {{.*}} {getenv
-// CHECK-NOT:  store i32 4711, i32* %rc, {{.*}} {getenv
-// CHECK-NOT:  store i32 42, i32* %rc, {{.*}} {getenv
+// CHECK-DAG:  %cmp = {{.*}}
+// CHECK-DAG:  br i1 %cmp, {{.*}}
+// CHECK-NOT:  store i32 4711, i32* %rc, {{.*}}
+// CHECK-NOT:  store i32 42, i32* %rc, {{.*}}
