@@ -1,5 +1,5 @@
 // CHECK-DAG: store i8** %t1, i8*** %t2, {{.*}}
 // CHECK-DAG: store i8*** %t2, i8**** %t3, {{.*}}
-// CHECK-DAG: store i8** %{{[0-9]}}, i8*** %t4, {{.*}}
-// CHECK-NOT: store i8** %call1, i8*** %{{[0-9]}}, {{.*}}
+// CHECK-DAG: store i8** %{{[0-9]*}}, i8*** %t4, {{.*}}
+// CHECK-NOT: store i8** %call1, i8*** %{{[0-9]*}}, {{.*}}
 
