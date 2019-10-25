@@ -13,7 +13,7 @@ struct s1 foo() {
   getenv("gude");
   ___REGION_END __RT_Commit "getenv"
 
-  return s1;
+  return struct1;
 }
 int main() {
   struct s1 struct1 = foo();
