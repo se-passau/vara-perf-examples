@@ -1,5 +1,5 @@
 ; storing of **t2
-; store i8** %2, i8*** %3,{{.*}}
+; CHECK-DAG: store i8** %2, i8*** %3,{{.*}}
 
 ; storing of *t3
 ; CHECK-DAG: store i8* %7, i8** %4,{{.*}}
