@@ -4,7 +4,7 @@
 void foo(int n, ...) {
   va_list ap;
   va_start(ap, n);
-  char *t = va_arg(ap, char *);
+  char *n = va_arg(ap, char *);
   va_end(ap);
 }
 

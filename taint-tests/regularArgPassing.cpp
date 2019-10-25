@@ -7,19 +7,19 @@ struct s2 {
 
 struct s1 {
   char *t;
-  struct s2 s2;
+  struct s2 struct2;
 };
 
-void foo(struct s2 *s2) { char *t1 = s2->t; }
+void foo(struct s2 *struct2) { char *t1 = struct2->t; }
 
 int main() {
-  struct s1 s1;
-  s1.s2.t = 
+  struct s1 struct1;
+  struct1.struct2.t = 
   ___REGION_START __RT_Commit "getenv"
   getenv("gude");
   ___REGION_END __RT_Commit "getenv"
 
-  foo(&s1.s2);
+  foo(&struct1.struct2);
 
   return 0;
 }

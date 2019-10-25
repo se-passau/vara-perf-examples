@@ -1,7 +1,7 @@
 #include <stdlib.h>
 #include <stdarg.h>
 
-void bar(va_list ap) { char *t = va_arg(ap, char *); }
+void bar(va_list ap) { char *s = va_arg(ap, char *); }
 
 void foo(int n, ...) {
   va_list ap;

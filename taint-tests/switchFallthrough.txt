@@ -1,5 +1,6 @@
 // CHECK-DAG: load i8*, i8** %t, {{.*}}
-// CHECK-DAG: ptrtoint i8* {{.*}}
+// CHECK-DAG: store i32 42, i32* %a, {{.*}}
+// CHECK-DAG: store i32 4711, i32* %b, {{.*}}
 // CHECK-DAG: %conv = trunc i64 {{.*}}
-// CHECK-DAG:      ] T:
+// CHECK-DAG: ]{{.*}}
 
