@@ -1,4 +1,9 @@
-// CHECK-DAG:  %cmp = {{.*}}
-// CHECK-DAG:  br i1 %cmp, {{.*}}
-// CHECK-DAG:  store i32 4711, i32* %rc, {{.*}}
-// CHECK-DAG:  store i32 42, i32* %rc, {{.*}}
+; if statement
+; CHECK-DAG:  %6 = icmp ne i8* %5,{{.*}}
+
+; implicit taint
+; CHECK-DAG:  store i32 4711, i32* %2,{{.*}}
+; implicit taint
+; CHECK-DAG:  store i32 42, i32* %2,{{.*}}
+; implicit taint
+; CHECK-DAG:  ret i32 %10{{.*}}

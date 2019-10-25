@@ -1,8 +1,5 @@
-// CHECK-DAG: store i32 %conv, i32* %rc, {{.*}}
-// CHECK-DAG: %tobool = icmp ne i32 {{.*}}
-// CHECK-DAG: br i1 %tobool, label %if.then, {{.*}}
-// CHECK-DAG: store i32 %{{[0-9]*}}, i32* %retval, {{.*}}
-// CHECK-DAG: store i32 %add, i32* %retval, {{.*}}
-// CHECK-DAG: ret i32 {{.*}}
-// CHECK-DAG: br label %return{{.*}}
+; comparison for if statement
+; CHECK-DAG: %9 = icmp ne i32 %8,{{.*}}
 
+; tainted return value
+; CHECK-DAG: ret i32 {{.*}}

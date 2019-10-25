@@ -1,2 +1,5 @@
-// CHECK-DAG: store i8* %{{[0-9]*}}, i8** %t1, {{.*}} 
-// CHECK-DAG: store i8* %call, i8** %t, align 8, {{.*}}
+; check the original taint
+; CHECK-DAG: store i8* %4, i8** %5,{{.*}}
+
+; the tainted value assigned in the called function
+; CHECK-DAG: store i8* %9, i8** %4,{{.*}}

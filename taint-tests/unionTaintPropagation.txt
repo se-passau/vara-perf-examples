@@ -1,1 +1,5 @@
-// CHECK-DAG: store i8* %{{[0-9]*}}, i8** %t1, {{.*}}
+; storage of *t1
+; CHECK-DAG: store i8* %13, i8** %3,{{.*}}
+
+; storage of a from a pointer to the array
+; CHECK-DAG: store i32 %19, i32* %5,{{.*}}

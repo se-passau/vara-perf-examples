@@ -1,1 +1,5 @@
-// CHECK-DAG:     store i8* %{{[0-9]*}}, i8** %t1, {{.*}} 
+; usage of the tainted variable inside another function
+; CHECK-DAG: %6 = load i8*, i8** %5,{{.*}}
+
+; storage of the env variable in the char* inside the struct
+; store i8* %3, i8** %4,{{.*}}

@@ -1,3 +1,5 @@
-// CHECK-DAG: store i8** %t1, i8*** %t2, {{.*}}
-// CHECK-DAG: store i8* %{{[0-9]*}}, i8** %t3, {{.*}}
+; storing of **t2
+; store i8** %2, i8*** %3,{{.*}}
 
+; storing of *t3
+; CHECK-DAG: store i8* %7, i8** %4,{{.*}}

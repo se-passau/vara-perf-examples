@@ -1,2 +1,2 @@
-// CHECK-DAG: store i8* %call, i8** %t, {{.*}}
-
+; storage of *t received from function
+; CHECK-DAG: store i8* %3, i8** %2,{{.*}}

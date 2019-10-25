@@ -1,2 +1,5 @@
-// CHECK-DAG:  store i32 %cond, i32* %a, {{.*}}
-// CHECK-DAG:  store i32* %{{[0-9]*}}, i32** %c, {{.*}}
+; implicit taint
+; CHECK-DAG:  store i8* %6, i8** %2,{{.*}}
+
+; directive taint
+; CHECK-DAG:  store i32* %21, i32** %5,{{.*}}

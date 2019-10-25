@@ -1,6 +1,5 @@
-// CHECK-DAG: load i8*, i8** %t, {{.*}}
-// CHECK-DAG: store i32 42, i32* %a, {{.*}}
-// CHECK-DAG: store i32 4711, i32* %b, {{.*}}
-// CHECK-DAG: %conv = trunc i64 {{.*}}
-// CHECK-DAG: ]{{.*}}
+; indirect taint from switch condition, would not be tainted in fallthrough
+; CHECK-DAG: store i32 42, i32* %3,{{.*}}
 
+; indirect taint from switch condition
+; CHECK-DAG: store i32 4711, i32* %4,{{.*}}
