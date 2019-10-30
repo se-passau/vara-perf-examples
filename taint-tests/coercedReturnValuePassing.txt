@@ -1,2 +1,1 @@
-; CHECK-DAG: store i8* %11, i8** %3,{{.*}}
-
+; CHECK-DAG: store i8* %11, i8** %3,{{.*}} T: {RetT_getenv }

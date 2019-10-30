@@ -1,0 +1,1 @@
+CHECK-NOT: %13 = call i8* @__cxa_begin_catch(i8* %12) #2 T: {RetT{{.*}}

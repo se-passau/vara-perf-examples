@@ -1,5 +1,7 @@
+#include <stdlib.h>
+
 int getEnvVar() {
-  return (int) 
+  return (int)(size_t) 
     ___REGION_START __RT_Commit "getenv"
     getenv("gude"); // taint
     ___REGION_END __RT_Commit "getenv" 
@@ -10,7 +12,7 @@ int get21(int) {
 }
 
 int getEnvWithParam(int) {
-  return (int) 
+  return (int)(size_t)
     ___REGION_START __RT_Commit "getenv"
     getenv("gude"); // taint
     ___REGION_END __RT_Commit "getenv" 

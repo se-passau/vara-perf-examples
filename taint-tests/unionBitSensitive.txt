@@ -1,0 +1,5 @@
+; storage of tainted_int
+; CHECK-DAG: store i32 %13, i32* %4, align 4{{.*}}T: {RetT_getenv }
+
+; storage of original tainted char
+; store i8 %18, i8* %5, align 1{{.*}}T: {RetT_getenv }

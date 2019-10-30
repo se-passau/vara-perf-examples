@@ -1,2 +1,2 @@
 ; assignment of *s inside the function foo
-; CHECK-DAG: store i8* %24, i8** %4,{{.*}}
+; CHECK-DAG: store i8* %24, i8** %4,{{.*}} T: {RetT_getenv }

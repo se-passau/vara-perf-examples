@@ -1,5 +1,5 @@
 ; check the original taint
-; CHECK-DAG: store i8* %4, i8** %5,{{.*}}
+; CHECK-DAG: store i8* %4, i8** %5,{{.*}} T: {RetT_getenv }
 
 ; the tainted value assigned in the called function
-; CHECK-DAG: store i8* %9, i8** %4,{{.*}}
+; CHECK-DAG: store i8* %9, i8** %4,{{.*}} T: {RetT_getenv }

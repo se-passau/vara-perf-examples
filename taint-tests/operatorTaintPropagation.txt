@@ -1,5 +1,5 @@
 ; implicit taint
-; CHECK-DAG:  store i8* %6, i8** %2,{{.*}}
+; CHECK-DAG:  store i8* %6, i8** %2,{{.*}} T: {RetT_getenv }
 
 ; directive taint
-; CHECK-DAG:  store i32* %21, i32** %5,{{.*}}
+; CHECK-DAG:  store i32* %21, i32** %5,{{.*}} T: {RetT_getenv }

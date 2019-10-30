@@ -1,5 +1,5 @@
 ; storage of *t1
-; CHECK-DAG: store i8* %13, i8** %3,{{.*}}
+; CHECK-DAG: store i8* %13, i8** %3,{{.*}} T: {RetT_getenv }
 
 ; storage of a from a pointer to the array
-; CHECK-DAG: store i32 %19, i32* %5,{{.*}}
+; CHECK-DAG: store i32 %19, i32* %5,{{.*}} T: {RetT_getenv }

@@ -1,9 +1,9 @@
 ; if statement
-; CHECK-DAG:  %6 = icmp ne i8* %5,{{.*}}
+; CHECK-DAG:  %6 = icmp ne i8* %5,{{.*}} T: {RetT_getenv }
 
 ; implicit taint
-; CHECK-DAG:  store i32 4711, i32* %2,{{.*}}
+; CHECK-DAG:  store i32 4711, i32* %2,{{.*}} T: {RetT_getenv }
 ; implicit taint
-; CHECK-DAG:  store i32 42, i32* %2,{{.*}}
+; CHECK-DAG:  store i32 42, i32* %2,{{.*}} T: {RetT_getenv }
 ; implicit taint
-; CHECK-DAG:  ret i32 %10{{.*}}
+; CHECK-DAG:  ret i32 %10{{.*}} T: {RetT_getenv }

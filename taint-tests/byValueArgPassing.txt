@@ -1,5 +1,8 @@
-; usage of the tainted variable inside another function
-; CHECK-DAG: %6 = load i8*, i8** %5,{{.*}}
+; storage of getenv call
+; CHECK-DAG: %[[var_1:[0-9]+]] = call i8* @getenv{{.*}}
+
+; check storage of the tainted parameter inside the function
+; CHECK-DAG: store i8* %4, i8** %3, align 8 T: {{{[a-zA-Z0-9\._]+}} }
 
 ; storage of the env variable in the char* inside the struct
-; store i8* %3, i8** %4,{{.*}}
+; store i8* %[[var_1]], i8** %4,{{.*}} T: {RetT_getenv }

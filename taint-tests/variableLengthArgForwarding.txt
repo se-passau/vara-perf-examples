@@ -1,5 +1,5 @@
 ; loading of the tainted string *t
-; CHECK-DAG: store i8* %3, i8** %2,
+; CHECK-DAG: store i8* %3, i8** %2,{{.*}} T: {RetT_getenv }
 
 ; assignment of *s from va_arg list
-; CHECK-DAG: store i8* %21, i8** %3,{{.*}}
+; CHECK-DAG: store i8* %21, i8** %3,{{.*}} T: {RetT_getenv }

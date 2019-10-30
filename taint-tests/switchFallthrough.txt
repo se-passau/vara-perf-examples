@@ -1,5 +1,5 @@
 ; indirect taint from switch condition, would not be tainted in fallthrough
-; CHECK-DAG: store i32 42, i32* %3,{{.*}}
+; CHECK-DAG: store i32 42, i32* %3,{{.*}} T: {RetT_getenv }
 
 ; indirect taint from switch condition
-; CHECK-DAG: store i32 4711, i32* %4,{{.*}}
+; CHECK-DAG: store i32 4711, i32* %4,{{.*}} T: {RetT_getenv }

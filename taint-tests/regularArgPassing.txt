@@ -1,2 +1,2 @@
 ; storage of *t1
-; CHECK-DAG: store i8* %6, i8** %3,{{.*}}
+; CHECK-DAG: store i8* %6, i8** %3,{{.*}} T: {RetT_getenv }
