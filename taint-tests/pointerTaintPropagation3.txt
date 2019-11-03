@@ -1,8 +1,10 @@
-; assignment of **t2
-; CHECK-DAG: store i8** %2, i8*** %3,{{.*}}
-
 ; assignment of ***t3
-; CHECK-DAG: store i8*** %3, i8**** %4,{{.*}}
+; CHECK-DAG: store i8*** %{{[0-9]+}}, i8**** %{{[0-9]+}}, {{.*}} T: {RetT_getenv }
 
+; load of the pointer stored in t3
+; CHECK-DAG: %[[load_t3:[0-9]+]] = load i8**, i8***{{.*}}
 ; assignment of **t4
-; CHECK-DAG: store i8** %8, i8*** %5,{{.*}}
+; CHECK-DAG: store i8** %[[load_t3]], i8***{{.*}} T: {RetT_getenv }
+
+; assignment of **t2
+; CHECK-DAG: store i8** %{{[0-9]+}}, i8*** %{{[0-9]+}},{{.*}} T: {RetT_getenv }

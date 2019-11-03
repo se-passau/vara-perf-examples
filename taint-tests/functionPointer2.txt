@@ -1,0 +1,5 @@
+; call of function with 42 as argument (only one call is with 42)
+; CHECK-DAG: %[[call:[0-9]+]] = call i32 %{{[0-9]+}}(i32 42){{.*}}
+
+; actual storage of the functions return value
+; CHECK-DAG: store i32 %[[call]],{{.*}}T: {RetT_getenv }

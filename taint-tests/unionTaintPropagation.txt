@@ -1,5 +1,11 @@
-; storage of *t1
-; CHECK-DAG: store i8* %13, i8** %3,{{.*}}
+; storage of the getenv
+; CHECK-DAG: store i8* %{{[0-9]+}}, i8** %{{[0-9]+}},{{.*}} T: {RetT_getenv }
 
-; storage of a from a pointer to the array
-; CHECK-DAG: store i32 %19, i32* %5,{{.*}}
+; storage of *t1
+; CHECK-DAG: store i8* %{{[0-9]+}}, i8** %{{[0-9]+}},{{.*}} T: {RetT_getenv }
+
+; currently there only three 'store i8* %foo, i8** %bar ... calls
+; the first and the second must be tainted, the third not
+; however if currently more than one is tainted the union propagation worked
+
+; to check false positives we need the check-not directive here

@@ -1,2 +1,14 @@
+; store elemtpointer to s2.t
+; CHECK-DAG: %[[elem_pointer:[0-9]+]] = getelementptr inbounds %struct.s2, %struct.s2* %{{.*}} T: {{{[a-zA-Z0-9\._]+}} }
+
+; load value of s2.t
+; CHECK-DAG: %[[load:[0-9]+]] = load i8*, i8** %[[elem_pointer]], align 8 T: {{{[a-zA-Z0-9\._]+}} }
+
 ; storage of *t1
-; CHECK-DAG: store i8* %6, i8** %3,{{.*}}
+; CHECK-DAG: store i8* %[[load]], i8** %{{.*}} T: {{{[a-zA-Z0-9\._]+}} }
+
+; variable that stores getenv, used as taint here
+; CHECK-DAG: %[[call:[0-9]+]] = call i8* @getenv(i8* getelementptr inbounds{{.*}}
+
+; variable that gets used as argument in function call 
+; CHECK-DAG: store i8* %[[call]], i8** %{{[0-9]+}}, align 8 T: {RetT_getenv }

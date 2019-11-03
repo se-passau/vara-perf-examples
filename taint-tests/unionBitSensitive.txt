@@ -1,0 +1,8 @@
+; the only load of an i32* is the one used to get m.f.i
+; CHECK-DAG: %[[mfi:[0-9]+]] = load i32, i32* %{{[0-9]+}},{{.*}}
+
+; storage of tainted_int
+; CHECK-DAG: store i32 %[[mfi]], i32* %[[char_a:[0-9]+]],{{.*}}T: {RetT_getenv }
+
+; storage of original tainted char
+; store i8 %{{[0-9]+}}, i8* %[[char_a + 1]], align 1{{.*}}T: {RetT_getenv }

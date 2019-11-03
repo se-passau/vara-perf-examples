@@ -1,2 +1,14 @@
-; CHECK-DAG: store i8* %11, i8** %3,{{.*}}
+; store pointer to struct s1
+; CHECK-DAG: %[[pointer:[0-9]+]] = getelementptr inbounds %struct.s1,{{.*}}
 
+; name the variable of the char pointer t
+; CHECK-DAG: %[[char_pointer:[0-9]+]] = alloca i8*, align 8 T: {}
+
+; get pointer to s1.t
+; CHECK-DAG: %[[var_1:[0-9]+]] = getelementptr inbounds %struct.s1,{{.*}}
+
+; load s1.t into a variable
+; CHECK-DAG: %[[var_2:[0-9]+]] = load i8*, i8** %[[var_1]], align 8{{.*}}
+
+; actual propagation of the tainted value
+; CHECK-DAG: store i8* %[[var_2]], i8** %[[char_pointer]],{{.*}} T: {RetT_getenv }
