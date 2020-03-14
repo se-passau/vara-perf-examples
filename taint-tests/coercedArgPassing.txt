@@ -1,0 +1,11 @@
+; name the memory location of the char pointer
+; CHECK-DAG: {{.*}}%[[memory:[0-9]+]] = alloca i8*, align 8{{.*}}
+
+; store the pointer to the struct
+; CHECK-DAG: {{.*}}%[[var_1:[0-9]+]] = getelementptr inbounds %struct.s1,{{.*}}
+
+; load the value that is being stored in the string
+; CHECK-DAG: {{.*}}%[[var_2:[0-9]+]] = load i8*, i8** %[[var_1]], align 8{{.*}}
+
+; the tainted value assigned in the called function
+; CHECK-DAG: store i8* %[[var_2]], i8** %[[memory]],{{.*}} T: {{{[a-zA-Z0-9\._]+}} }

@@ -1,0 +1,7 @@
+; return of function is tainted
+; CHECK-DAG: ret i8* %{{[0-9]+}} T: {RetT_getenv }
+
+; CHECK-DAG: %[[func_ret:[0-9]+]] = call i8* @_Z3foov() T: {{{[a-zA-Z0-9\._]+}} }
+
+; storage of *t received from function
+; CHECK-DAG: store i8* %[[func_ret]], i8** %{{[0-9]+}},{{.*}} T: {{{[a-zA-Z0-9\._]+}} }

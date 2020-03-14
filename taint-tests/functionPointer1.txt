@@ -1,0 +1,8 @@
+; load the last function pointer
+; CHECK-DAG: %[[func_pointer:[0-9]+]] = load i32 (%struct.Base*)*, i32 (%struct.Base*)**{{.*}}
+
+; store return of function variable
+; CHECK-DAG: %[[func_call:[0-9]+]] = call i32 %[[func_pointer]](%struct.Base*{{.*}}
+
+; Storage of tainted return value in the actual memory for the variable
+; CHECK-DAG: store i32 %[[func_call]],{{.*}} T: {RetT_getenv }

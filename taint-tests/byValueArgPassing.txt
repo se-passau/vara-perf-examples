@@ -1,0 +1,15 @@
+; temporary variable used in the function
+; CHECK-DAG: {{.*}}%[[tmp_1:[0-9]+]] = alloca i8*, align 8 T: {}
+; CHECK-DAG: {{.*}}%[[tmp_2:[0-9]+]] = alloca i8*, align 8 T: {}
+
+; assignment of the tainted value inside the function
+; CHECK-DAG: %[[string:[0-9]+]] = load i8*, i8** %[[tmp_1]], {{.*}}T: {{{[a-zA-Z0-9\._]+}} }
+
+; check storage of the tainted parameter inside the function
+; CHECK-DAG: store i8* %[[string]], i8** %[[tmp_2]], {{.*}}T: {{{[a-zA-Z0-9\._]+}} }
+
+; storage of getenv call
+; CHECK-DAG: %[[var_1:[0-9]+]] = call i8* @getenv{{.*}}
+
+; storage of the env variable in the char* inside the struct
+; store i8* %[[var_1]], i8** %4,{{.*}} T: {RetT_getenv }

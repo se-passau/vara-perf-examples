@@ -1,0 +1,5 @@
+; comparison for if statement
+; CHECK-DAG: %{{[0-9]+}} = icmp ne i32 %{{[0-9]+}},{{.*}} T: {RetT_getenv }
+
+; tainted return value
+; CHECK-DAG: ret i32 {{.*}} T: {RetT_getenv }

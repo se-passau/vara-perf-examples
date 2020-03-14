@@ -1,0 +1,13 @@
+; get the phi
+; CHECK-DAG: %[[var_1:[0-9]+]] = phi i8**{{.*}}T: {{{[a-zA-Z0-9\._]+}} }
+; load the value of the current argument
+; CHECK-DAG: %[[var_2:[0-9]+]] = load i8*, i8** %[[var_1]],{{.*}}T: {{{[a-zA-Z0-9\._]+}} }
+
+; assignment of *s from va_arg list
+; CHECK-DAG: store i8* %[[var_2]], i8** %{{[0-9]+}},{{.*}} T: {{{[a-zA-Z0-9\._]+}} }
+
+; matching of the getenv return
+; CHECK-DAG: %[[getenv:[0-9]+]] = call i8* @getenv{{.*}} T: {RetT_getenv }
+
+; ensure the value the function foo gets called with is tainted
+; CHECK-DAG: store i8* %[[getenv]], i8** %{{[0-9]+}},{{.*}} T: {RetT_getenv }

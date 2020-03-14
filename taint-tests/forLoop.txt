@@ -1,0 +1,4 @@
+; there are only two storage instructions that use two variables as arguments
+; those two instructions are the storage calls inside the for loop
+; CHECK-DAG: store i32 %{{[0-9]+}}, i32* %{{[0-9]+}}, align 4{{.*}}T: {RetT_getenv }
+; CHECK-DAG: store i32 %{{[0-9]+}}, i32* %{{[0-9]+}}, align 4{{.*}}T: {RetT_getenv }

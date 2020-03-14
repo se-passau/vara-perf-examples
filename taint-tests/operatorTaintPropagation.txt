@@ -1,0 +1,11 @@
+; the selection of the tenary operator
+; CHECK-DAG: %[[tenary_val:[0-9]+]] = select i1{{.*}} T: {RetT_getenv }
+
+; storage of the value decided by tenary
+; CHECK-DAG:  store i32 %[[tenary_val]],{{.*}} T: {RetT_getenv }
+
+; it only exists one bitcast to i8*
+; CHECK-DAG: %[[int_pointer:[0-9]+]] = bitcast i8*{{.*}} T: {RetT_getenv }
+
+; the storage of the int pointer
+; CHECK-DAG: store i32* %[[int_pointer]]{{.*}} T: {RetT_getenv }

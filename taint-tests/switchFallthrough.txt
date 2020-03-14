@@ -1,0 +1,8 @@
+; check the label for the switch condition
+; CHECK-DAG: ],{{.*}} T: {RetT_getenv }
+
+; indirect taint from switch condition, would not be tainted in fallthrough
+; CHECK-DAG: store i32 42, i32* %{{[0-9]+}},{{.*}} T: {RetT_getenv }
+
+; indirect taint from switch condition
+; CHECK-DAG: store i32 4711, i32* %{{[0-9]+}},{{.*}} T: {RetT_getenv }

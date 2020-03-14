@@ -1,0 +1,6 @@
+; loading and stoing of s1P.s2.t
+; CHECK-DAG: %[[s2:[0-9]+]] = getelementptr inbounds %struct.s2, %struct.s2*{{.*}}
+; CHECK-DAG: %[[load_s2:[0-9]+]] = load i8*, i8** %[[s2]], align 8{{.*}}
+
+; storage of *t1
+; CHECK-DAG: store i8* %[[load_s2]]{{.*}} T: {RetT_getenv }
